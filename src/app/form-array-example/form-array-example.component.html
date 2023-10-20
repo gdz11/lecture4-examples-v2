@@ -1,0 +1,21 @@
+<h1>Form array example</h1>
+
+<form [formGroup]="announcementForm">
+  <input placeholder="title" formControlName="title" class="form__input" />
+
+  <fieldset [formArrayName]="'skills'" class="form__skills">
+    <legend>Skills</legend>
+    <div *ngFor="let control of skills.controls; index as i" class="form__skill">
+      <input placeholder="skill" [formControlName]="i" class="form__input" />
+      <button class="form__button--delete" (click)="onRemoveSkill(i)" [disabled]="skills.controls.length == 1">x</button>
+    </div>
+  </fieldset>
+
+  <div class="form__buttons">
+    <button class="form__button" (click)="onAddSkill()">add skill</button>
+  </div>
+</form>
+
+<div class="form__message">
+  {{ announcementForm.value | json }}
+</div>

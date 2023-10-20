@@ -1,0 +1,11 @@
+<h2>Template reference variable example</h2>
+
+content in components, with view encapsulation set to emulated, is affected by global styles from styles.css (orange h2 in this case)
+
+
+<br><br>
+<input type="text" #test placeholder="name" class="form__input" />
+
+<div class="form__buttons">
+  <button class="form__button" (click)="getData(test.value)">Get Value</button>
+</div>

@@ -1,0 +1,25 @@
+
+<h1>Nested form group example</h1>
+
+<form [formGroup]="registrationForm">
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name" class="form__input" />
+    <label for="email">Email: </label>
+    <input type="text" id="email" formControlName="email" class="form__input" />
+
+    <fieldset formGroupName="address" class="form__address">
+        <legend>Address</legend>
+        <label for="city">City: </label>
+        <input type="text" id="city" formControlName="city" class="form__input" />
+
+        <label for="street">Street: </label>
+        <input type="text" id="street" formControlName="street" class="form__input" />
+    </fieldset>
+</form>
+
+
+<div class="form__buttons">
+<button (click)="changeCity()" class="form__button">Change city</button>
+</div>
+
+<div class="form__message">{{ registrationForm.value | json }}</div>

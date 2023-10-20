@@ -1,0 +1,32 @@
+
+
+.form__input {
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.form__input:focus {
+    background-color: azure;
+}
+
+.form__message {
+    padding: 10px 0 10px 0;
+    font-style: italic;
+}
+
+.form__button{
+    padding: 5px;
+    min-width: 5rem;
+}
+
+.form__button:not(:first-child){
+    margin-left: 10px;
+}
+
+
+
+:host {
+    display: block;
+    padding: 20px;
+}
