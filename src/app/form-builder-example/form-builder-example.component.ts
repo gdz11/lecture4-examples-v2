@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form-builder-example',
@@ -7,4 +8,24 @@ import { Component } from '@angular/core';
 })
 export class FormBuilderExampleComponent {
 
+  registrationForm = this.fb.group({
+    name: [''],
+    email: [''],
+    address: this.fb.group({
+      city: ['Tbilisi'],
+      street: ['']
+    })
+  });
+
+  changeCity(){
+    this.registrationForm.patchValue({
+      address: {
+        city: 'Batumi'
+      }
+    });
+  }
+
+  constructor(private fb: FormBuilder){
+    
+  }
 }
